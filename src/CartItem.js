@@ -10,13 +10,29 @@ class CartItem extends React.Component {
       img: '',
     };
     // this.increaseQuantity = this.increaseQuantity.bind(this);
+    // this.testing();
   }
-  increaseQuantity = () => {
 
+  //   testing() {
+  //     const promise = new Promise((resolve, reject) => {
+  //       setTimeout(() => {
+  //         resolve('done');
+  //       }, 5000);
+  //     });
+
+  //     promise.then(() => {
+  //       // setState acts like a synchronous call in promise and ajax and hence batching didn't occur here
+  //       this.setState({ qty: this.state.qty + 10 });
+
+  //       console.log('state', this.state);
+  //     });
+  //   }
+  increaseQuantity = () => {
     //   setState form 1[object form used when prevState is not req.]
-    //   this.setState({
-    //       qty: this.state.qty + 1
-    //   })
+    // this.setState({
+    //   qty: this.state.qty + 1,
+    // }, () = {});
+    // setState acts like an asynchronous call in Event Handlers so batching will be performed here
 
     // setState form 2[function form used when prevState is req]
     this.setState((prevState) => {
