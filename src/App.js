@@ -11,21 +11,24 @@ class App extends React.Component {
           price: 999,
           title: 'Watch',
           qty: 1,
-          img: '',
+          img:
+            'https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
           id: 1,
         },
         {
           price: 9999,
           title: 'Mobile Phone',
           qty: 12,
-          img: '',
+          img:
+            'https://images.unsplash.com/photo-1580910051074-3eb694886505?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
           id: 2,
         },
         {
           price: 99999,
           title: 'Laptop',
           qty: 9,
-          img: '',
+          img:
+            'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
           id: 3,
         },
       ],
@@ -75,21 +78,36 @@ class App extends React.Component {
 
     products.forEach((product) => {
       count += product.qty;
-    })
+    });
 
     return count;
-  }
+  };
+
+  getCartTotal = () => {
+    const { products } = this.state;
+
+    let cartTotal = 0;
+
+    products.map((product) => {
+      cartTotal = cartTotal + product.qty * product.price;
+    });
+
+    return cartTotal;
+  };
   render() {
     const { products } = this.state;
     return (
       <div className="App">
-        <Navbar count={this.getCartCount()}/>
+        <Navbar count={this.getCartCount()} />
         <Cart
           products={products}
           onIncreaseQuantity={this.handleIncreaseQuantity}
           onDecreaseQuantity={this.handleDecreaseQuantity}
           onDeleteProduct={this.handleDeleteProduct}
         />
+        <div style={{ fontSize: 20, padding: 15 }}>
+          TOTAL: {this.getCartTotal()}
+        </div>
       </div>
     );
   }
