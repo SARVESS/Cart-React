@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Deployment
 This project can be viewed at:
-`https://sarvess.github.io/Cart-React/`
+<p> https://sarvess.github.io/Cart-React/ </p>
 
 ## Available Scripts
 
