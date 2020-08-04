@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Deployment
+This project can be viewed at:
+`https://sarvess.github.io/Cart-React/`
+
 ## Available Scripts
 
 In the project directory, you can run:
